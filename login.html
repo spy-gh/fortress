@@ -6,77 +6,91 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="fortress-logo.jpg">
 <style>
-/* Reset default margins for all elements */
+/* Reset default margins/paddings */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f4f6f8;
-    text-align:center;
+/* Body */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    text-align: center;
 }
 
 /* Header */
-header{
-    background:#1e3a5f;
-    color:white;
-    padding:20px 0;
-    text-align:center;
+header {
+    background: #1e3a5f;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
 }
-header img{
-    width:110px;
-    margin-bottom:10px;
+header img {
+    width: 110px;
+    margin-bottom: 10px;
 }
 
 /* Navigation */
-nav{
-    background:#16324f;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
+nav {
+    background: #16324f;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* allows menu to wrap on smaller screens */
 }
-nav a{
-    color:white;
-    padding:14px 20px;
-    text-decoration:none;
-    margin:5px;
-    font-weight:bold;
+nav a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    margin: 5px;
+    font-weight: bold;
+    white-space: nowrap; /* prevents breaking mid-word */
+    flex: 0 1 auto; /* prevents shrinking too much */
 }
-nav a:hover{background:#27496d;}
-
-/* Card */
-.card{
-    background:white;
-    padding:30px;
-    max-width:400px;
-    margin:40px auto; /* Added margin to separate from nav */
-    border-radius:6px;
-    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+nav a:hover {
+    background: #27496d;
 }
 
-/* Inputs and button */
-input, button{
-    padding:10px;
-    width:100%;
-    margin-top:10px;
-    border-radius:4px;
-    border:1px solid #ccc;
+/* Login Card */
+.card {
+    background: white;
+    padding: 30px;
+    max-width: 400px;
+    margin: 40px auto; /* space below nav */
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
-button{
-    background:#1e3a5f;
-    color:white;
-    border:none;
-    cursor:pointer;
+
+/* Inputs and Button */
+input, button {
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
 }
-button:hover{
-    background:#27496d;
+button {
+    background: #1e3a5f;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
-#msg{
-    color:red;
-    margin-top:10px;
+button:hover {
+    background: #27496d;
+}
+#msg {
+    color: red;
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    background: #1e3a5f;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
 }
 </style>
 </head>
@@ -84,38 +98,44 @@ button:hover{
 <body>
 
 <header>
-<img src="fortress-logo.jpg" alt="Fortress Logo">
-<h1>Fortress Member Login</h1>
-<p>Nursing & Midwifery Training College Research Consortium</p>
+    <img src="fortress-logo.jpg" alt="Fortress Logo">
+    <h1>Fortress Member Login</h1>
+    <p>Nursing & Midwifery Training College Research Consortium</p>
 </header>
 
 <nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="projects.html">Projects</a>
-  <a href="resources.html">Resources</a>
-  <a href="reviews.html">Reviews</a>
-  <a href="contact.html">Contact</a>
-  <a href="ai-assistant.html">AI Research Assistant</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="resources.html">Resources</a>
+    <a href="submit.html">Submit Research</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contact.html">Contact</a>
+    <a href="ai-assistant.html">AI Research Assistant</a>
+    <a href="login.html">Login</a>
 </nav>
 
 <div class="card">
-<h2>Enter Access Code</h2>
-<input type="password" id="password" placeholder="Enter access code" aria-label="Access Code" onkeypress="if(event.key==='Enter'){login()}">
-<button onclick="login()">Login</button>
-<p id="msg"></p>
+    <h2>Enter Access Code</h2>
+    <input type="password" id="password" placeholder="Enter access code" aria-label="Access Code" onkeypress="if(event.key==='Enter'){login()}">
+    <button onclick="login()">Login</button>
+    <p id="msg"></p>
 </div>
 
 <script>
-function login(){
-  const pwd = document.getElementById("password").value.trim();
-  if(pwd === "FORTRESS2026"){
-    window.location.href = "resources.html";
-  } else {
-    document.getElementById("msg").innerText = "Invalid access code";
-  }
+function login() {
+    const pwd = document.getElementById("password").value.trim();
+    if (pwd === "FORTRESS2026") {
+        window.location.href = "resources.html";
+    } else {
+        document.getElementById("msg").innerText = "Invalid access code";
+    }
 }
 </script>
+
+<footer>
+    <p>© 2026 Fortress Consortium – In collaboration with NMTCs</p>
+</footer>
 
 </body>
 </html>
