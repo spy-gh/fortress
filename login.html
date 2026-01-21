@@ -4,27 +4,94 @@
 <meta charset="UTF-8">
 <title>Member Login | Fortress</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="fortress-logo.png">
 <style>
-body{font-family:Arial;background:#f4f6f8;text-align:center;padding-top:100px}
-.card{background:white;padding:30px;max-width:400px;margin:auto;
-border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
-input,button{padding:10px;width:100%;margin-top:10px}
-button{background:#1e3a5f;color:white;border:none}
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f6f8;
+    text-align:center;
+    padding-top:80px;
+    margin:0;
+}
+header{
+    background:#1e3a5f;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+.card{
+    background:white;
+    padding:30px;
+    max-width:400px;
+    margin:auto;
+    border-radius:6px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+input,button{
+    padding:10px;
+    width:100%;
+    margin-top:10px;
+    border-radius:4px;
+    border:1px solid #ccc;
+    box-sizing:border-box;
+}
+button{
+    background:#1e3a5f;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+button:hover{
+    background:#27496d;
+}
+#msg{
+    color:red;
+    margin-top:10px;
+}
+nav{
+    background:#16324f;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+nav a{
+    color:white;
+    padding:14px 20px;
+    text-decoration:none;
+    margin:5px;
+}
+nav a:hover{background:#27496d;}
 </style>
 </head>
 
 <body>
 
+<header>
+<img src="fortress-logo.png" alt="Fortress Logo" style="width:110px;">
+<h1>Fortress Member Login</h1>
+<p>Nursing & Midwifery Training College Research Consortium</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects</a>
+  <a href="resources.html">Resources</a>
+  <a href="reviews.html">Reviews</a>
+  <a href="contact.html">Contact</a>
+  <a href="ai-assistant.html">AI Research Assistant</a>
+</nav>
+
 <div class="card">
-<h2>Fortress Member Login</h2>
-<input type="password" id="password" placeholder="Enter access code">
+<h2>Enter Access Code</h2>
+<input type="password" id="password" placeholder="Enter access code" aria-label="Access Code" onkeypress="if(event.key==='Enter'){login()}">
 <button onclick="login()">Login</button>
-<p id="msg" style="color:red;"></p>
+<p id="msg"></p>
 </div>
 
 <script>
 function login(){
-  const pwd = document.getElementById("password").value;
+  const pwd = document.getElementById("password").value.trim();
   if(pwd === "FORTRESS2026"){
     window.location.href = "resources.html";
   } else {
