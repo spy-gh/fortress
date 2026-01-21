@@ -6,34 +6,64 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="fortress-logo.jpg">
 <style>
+/* Reset default margins for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
     font-family:Arial,Helvetica,sans-serif;
     background:#f4f6f8;
     text-align:center;
-    padding-top:80px;
-    margin:0;
 }
+
+/* Header */
 header{
     background:#1e3a5f;
     color:white;
-    padding:20px;
+    padding:20px 0;
     text-align:center;
 }
+header img{
+    width:110px;
+    margin-bottom:10px;
+}
+
+/* Navigation */
+nav{
+    background:#16324f;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+nav a{
+    color:white;
+    padding:14px 20px;
+    text-decoration:none;
+    margin:5px;
+    font-weight:bold;
+}
+nav a:hover{background:#27496d;}
+
+/* Card */
 .card{
     background:white;
     padding:30px;
     max-width:400px;
-    margin:auto;
+    margin:40px auto; /* Added margin to separate from nav */
     border-radius:6px;
     box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
-input,button{
+
+/* Inputs and button */
+input, button{
     padding:10px;
     width:100%;
     margin-top:10px;
     border-radius:4px;
     border:1px solid #ccc;
-    box-sizing:border-box;
 }
 button{
     background:#1e3a5f;
@@ -48,26 +78,13 @@ button:hover{
     color:red;
     margin-top:10px;
 }
-nav{
-    background:#16324f;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-}
-nav a{
-    color:white;
-    padding:14px 20px;
-    text-decoration:none;
-    margin:5px;
-}
-nav a:hover{background:#27496d;}
 </style>
 </head>
 
 <body>
 
 <header>
-<img src="fortress-logo.jpg" alt="Fortress Logo" style="width:110px;">
+<img src="fortress-logo.jpg" alt="Fortress Logo">
 <h1>Fortress Member Login</h1>
 <p>Nursing & Midwifery Training College Research Consortium</p>
 </header>
