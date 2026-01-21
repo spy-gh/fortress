@@ -19,6 +19,10 @@ header{
     text-align:center;
     padding:20px;
 }
+header img{
+    width:110px;
+    margin-bottom:10px;
+}
 nav{
     background:#16324f;
     display:flex;
@@ -29,6 +33,7 @@ nav a{
     color:white;
     padding:14px 20px;
     text-decoration:none;
+    margin:5px;
 }
 nav a:hover{
     background:#27496d;
@@ -41,6 +46,7 @@ section{
 h2{
     color:#1e3a5f;
     text-align:center;
+    margin-bottom:30px;
 }
 .review-card{
     background:white;
@@ -54,9 +60,9 @@ h2{
 }
 .reviewer{
     margin-top:10px;
+    font-style:italic;
     font-weight:bold;
     color:#1e3a5f;
-    font-style:italic; /* Added italics for names */
 }
 footer{
     background:#1e3a5f;
@@ -70,10 +76,12 @@ footer{
 <body>
 
 <header>
+<img src="fortress-logo.png" alt="Fortress Logo">
 <h1>Member Reviews</h1>
 <p>Experiences from Nursing Students & Research Supervisors</p>
 </header>
 
+<nav>
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
 <a href="projects.html">Projects</a>
@@ -82,7 +90,7 @@ footer{
 <a href="reviews.html">Reviews</a>
 <a href="contact.html">Contact</a>
 <a href="ai-assistant.html">AI Research Assistant</a>
- <a href="login.html">Login</a>
+<a href="login.html">Login</a>
 </nav>
 
 <section>
@@ -100,4 +108,52 @@ footer{
 
 <div class="review-card">
 <p>“Using Fortress helped me complete my research proposal on time with proper academic formatting.”</p>
-<div class="revi
+<div class="reviewer">— Abigail Boateng, Final-Year Nursing Student</div>
+</div>
+
+<div class="review-card">
+<p>“The platform promotes ethical research practices and consistency across student projects.”</p>
+<div class="reviewer">— Dr. Samuel Asante, Research Supervisor</div>
+</div>
+
+<div class="review-card">
+<p>“The guidance documents on data collection tools were extremely helpful during my field work.”</p>
+<div class="reviewer">— Evelyn Adjei, Community Health Nursing Student</div>
+</div>
+
+<div class="review-card">
+<p>“Fortress bridges the gap between theory and practical research for nursing students.”</p>
+<div class="reviewer">— Josephine Akua, Nurse Educator</div>
+</div>
+
+<div class="review-card">
+<p>“I gained confidence in writing questionnaires after using the Fortress research guides.”</p>
+<div class="reviewer">— Daniel Tetteh, Registered General Nursing Student</div>
+</div>
+
+<div class="review-card">
+<p>“The standardized research structure reduced errors and improved student submissions.”</p>
+<div class="reviewer">— Mrs. Linda Ofori, Project Supervisor</div>
+</div>
+
+<div class="review-card">
+<p>“Fortress made research less intimidating and more systematic.”</p>
+<div class="reviewer">— Patrick Annan, Nursing Student</div>
+</div>
+
+<div class="review-card">
+<p>“This consortium is a valuable resource for strengthening nursing research culture in NMTCs.”</p>
+<div class="reviewer">— Dr. Rebecca Amoako, Academic Researcher</div>
+</div>
+
+</section>
+
+<footer>
+<p>
+Fortress – Nursing Research Consortium <br>
+In collaboration with Nursing & Midwifery Training Colleges (NMTCs)
+</p>
+</footer>
+
+</body>
+</html>
