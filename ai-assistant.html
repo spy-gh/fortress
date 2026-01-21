@@ -4,21 +4,43 @@
 <meta charset="UTF-8">
 <title>AI Research Assistant | Fortress</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="fortress-logo.png">
 <style>
-body{font-family:Arial;background:#f4f6f8}
-section{max-width:900px;margin:auto;padding:40px}
-.card{background:white;padding:20px;border-radius:6px;
-box-shadow:0 2px 6px rgba(0,0,0,0.1)}
-textarea{width:100%;height:120px;padding:10px}
-button{background:#1e3a5f;color:white;border:none;padding:10px}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f6f8;color:#333;}
+header,footer{background:#1e3a5f;color:white;text-align:center;padding:20px;}
+nav{background:#16324f;display:flex;justify-content:center;flex-wrap:wrap;}
+nav a{color:white;padding:14px 20px;text-decoration:none;margin:5px;}
+nav a:hover{background:#27496d;}
+section{max-width:900px;margin:auto;padding:40px;}
+.card{background:white;padding:20px;border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+textarea{width:100%;height:120px;padding:10px;margin-top:10px;}
+button{background:#1e3a5f;color:white;border:none;padding:12px 20px;margin-top:10px;cursor:pointer;border-radius:4px;}
+button:hover{background:#27496d;}
+ul{margin-top:10px}
 </style>
 </head>
 
 <body>
 
-<section>
-<h2>Fortress AI Research Assistant</h2>
+<header>
+<img src="fortress-logo.png" alt="Fortress Logo" style="width:110px;">
+<h1>Fortress AI Research Assistant</h1>
+<p>Nursing & Midwifery Training College Research Consortium</p>
+</header>
 
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects</a>
+  <a href="resources.html">Resources</a>
+  <a href="submit.html">Submit Research</a>
+  <a href="reviews.html">Reviews</a>
+  <a href="contact.html">Contact</a>
+  <a href="ai-assistant.html">AI Research Assistant</a>
+  <a href="login.html">Login</a>
+</nav>
+
+<section>
 <div class="card">
 <p><strong>Use AI to help with:</strong></p>
 <ul>
@@ -29,15 +51,24 @@ button{background:#1e3a5f;color:white;border:none;padding:10px}
 </ul>
 
 <p>Copy your text below and click the button to open AI support:</p>
-
-<textarea placeholder="Paste your research question or draft here"></textarea>
-<br><br>
+<textarea id="userInput" placeholder="Paste your research question or draft here"></textarea>
+<br>
 <button onclick="openAI()">Ask AI Assistant</button>
 </div>
 </section>
 
+<footer>
+<p>© 2026 Fortress Consortium – In collaboration with NMTCs</p>
+</footer>
+
 <script>
 function openAI(){
+  const userText = document.getElementById("userInput").value;
+  if(userText.trim() === ""){
+    alert("Please enter a research question or draft before clicking the button.");
+    return;
+  }
+  // Open ChatGPT site in a new tab (future enhancement: pre-fill prompt via API)
   window.open("https://chat.openai.com/", "_blank");
 }
 </script>
